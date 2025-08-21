@@ -1,0 +1,11 @@
+local pad = workspace:WaitForChild("TeleportPad")
+
+local function onTouch(hit)
+	local character = hit.Parent
+	local humanoid = character:FindFirstChild("Humanoid")
+	if humanoid then
+		character:MoveTo(Vector3.new(0, 20, 0))
+	end
+end
+
+pad.Touched:Connect(onTouch)
